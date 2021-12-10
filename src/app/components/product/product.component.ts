@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Wojak } from '../../models/product.model'
 
 @Component({
   selector: 'app-product',
@@ -12,9 +13,10 @@ export class ProductComponent implements OnInit {
   }
 
   // Componentes del producto
-  product = {
-    name: 'twinkjak',
-    img: './assets/imgs/twinkjak.jpg',
-    price: 99.99
-  }
+  @Input() wojak: Wojak = {
+    id: '',
+    name: '',
+    img: '',
+    price: 0
+  };
 }

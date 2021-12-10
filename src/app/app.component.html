@@ -2,4 +2,6 @@
 </app-img>
 <input type="text" [(ngModel)]="input_name" />
 <hr>
-<app-product> </app-product>
+
+<app-product *ngFor="let wojak of wojaks" [wojak]="wojak">
+</app-product>
