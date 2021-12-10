@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'mini-store';
+  public title = 'mini-store';
+  public input_name:string = '';
+  public img = "./assets/imgs/witheredjak.jpg";
+
+  public imgLoaded(image: string){
+    console.log("Now parent knows the image is loaded");
+    console.log(image);
+  }
 }

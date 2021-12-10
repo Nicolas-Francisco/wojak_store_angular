@@ -1,0 +1,6 @@
+<img [src]="img" width="200" alt="img" (load)="imgLoaded()" >
+<p> Component img created by {{name}} </p>
+<p *ngIf="input_name != ''; else no_one"> Welcome {{input_name}} </p>
+<ng-template #no_one>
+  <p> Welcome, Stranger </p>
+</ng-template>
