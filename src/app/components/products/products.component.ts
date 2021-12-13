@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { WojaksService } from 'src/app/services/wojaks.service';
 import { Wojak } from '../../models/product.model';
+import { StoreService } from "../../services/store.service"
 
 @Component({
   selector: 'app-products',
@@ -10,42 +12,22 @@ export class ProductsComponent implements OnInit {
   public myShoppingCart:Wojak[] = [];
   public myTotal = 0;
 
-  public wojaks:Wojak[] = [
-    {
-      id: '01',
-      name: 'twinkjak',
-      img: './assets/imgs/twinkjak.jpg',
-      price: 99.99
-    },
-    {
-      id: '02',
-      name: 'cryjak',
-      img: './assets/imgs/cryjak.jpg',
-      price: 199.99
-    },
-    {
-      id: '03',
-      name: 'ladyjak',
-      img: './assets/imgs/ladyjak.jpg',
-      price: 299.99
-    },
-    {
-      id: '01',
-      name: 'darkjak',
-      img: './assets/imgs/darkjak.jpg',
-      price: 159.99
-    }
-  ];
+  public wojaks:Wojak[] = [];
 
-
-  constructor() { }
+  constructor(
+    private StoreService: StoreService,
+    private WojakService: WojaksService
+  ) {
+    this.myShoppingCart = this.StoreService.getShoppingCart();
+    this.wojaks = this.WojakService.getWojaks();
+    this.myTotal = this.StoreService.getTotal();
+  }
 
   ngOnInit(): void {
   }
 
   onAddToShoppingCart(wojak: Wojak){
-    console.log(wojak);
-    this.myShoppingCart.push(wojak);
-    this.myTotal += wojak.price;
+    this.StoreService.addWojak(wojak);
+    this.myTotal = this.StoreService.getTotal();
   }
 }
