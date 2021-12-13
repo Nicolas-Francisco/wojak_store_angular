@@ -1,6 +1,6 @@
 <div class="show-movile">
   <div>
-    <button>
+    <button (click)="toggleMenu()">
       <img src="./assets/svg/icon_menu.svg" alt="menu-img">
     </button>
 
@@ -11,6 +11,15 @@
     <a href="">
       <img src="./assets/svg/icon_shopping_cart.svg" alt="shop-logo">
     </a>
+  </div>
+
+  <div class="side-menu" [class.active]="show_menu">
+    <button (click)="toggleMenu()"> Close </button>
+    <ul>
+      <li> <a href=""> All </a> </li>
+      <li> <a href=""> Some Wojaks </a> </li>
+      <li> <a href=""> More Wojaks </a> </li>
+    </ul>
   </div>
 </div>
 

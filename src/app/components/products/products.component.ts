@@ -7,6 +7,9 @@ import { Wojak } from '../../models/product.model';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
+  public myShoppingCart:Wojak[] = [];
+  public myTotal = 0;
+
   public wojaks:Wojak[] = [
     {
       id: '01',
@@ -40,4 +43,9 @@ export class ProductsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onAddToShoppingCart(wojak: Wojak){
+    console.log(wojak);
+    this.myShoppingCart.push(wojak);
+    this.myTotal += wojak.price;
+  }
 }

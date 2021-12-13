@@ -1,4 +1,6 @@
+<p> Wojaks agregados: {{myShoppingCart.length}}, Total ${{myTotal}} </p>
+
 <div class="products-grid">
-  <app-product *ngFor="let wojak of wojaks" [wojak]="wojak">
+  <app-product *ngFor="let wojak of wojaks" [wojak]="wojak" (addedProduct)="onAddToShoppingCart($event)">
   </app-product>
 </div>
