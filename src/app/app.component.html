@@ -1,7 +1,11 @@
-<app-img [img]="img" [input_name]="input_name" (loaded)="imgLoaded($event)">
+<app-products> </app-products>
+
+<!--
+
+<button (click)="toggleImg()"> img </button>
+<app-img [img]="img" [input_name]="input_name" (loaded)="imgLoaded($event)" *ngIf="img_show">
 </app-img>
 <input type="text" [(ngModel)]="input_name" />
 <hr>
 
-<app-product *ngFor="let wojak of wojaks" [wojak]="wojak">
-</app-product>
+-->
