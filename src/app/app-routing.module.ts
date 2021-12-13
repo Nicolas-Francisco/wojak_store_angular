@@ -5,33 +5,39 @@ import { ProductsComponent } from "./components/products/products.component"
 import { ContactComponent } from "./components/contact/contact.component"
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component"
 import { DetailComponent } from "./components/detail/detail.component"
+import { LayoutComponent } from "./components/layout/layout.component"
 
 const routes: Routes = [
   {
     path: "",
-    redirectTo: "/home",
-    pathMatch: "full"
+    component: LayoutComponent,
+    children: [
+      {
+        path: "",
+        redirectTo: "/home",
+        pathMatch: "full",
+      },
+      {
+        path: "home",
+        component: HomeComponent
+      },
+      {
+        path: "products",
+        component: ProductsComponent
+      },
+      {
+        path: "products/:id",
+        component: DetailComponent
+      },
+      {
+        path: "contact",
+        component: ContactComponent
+      },
+      {
+        path: "**",
+        component: PageNotFoundComponent
+      }]
   },
-  {
-    path: "home",
-    component: HomeComponent
-  },
-  {
-    path: "products",
-    component: ProductsComponent
-  },
-  {
-    path: "products/:id",
-    component: DetailComponent
-  },
-  {
-    path: "contact",
-    component: ContactComponent
-  },
-  {
-    path: "**",
-    component: PageNotFoundComponent
-  }
 ];
 
 @NgModule({

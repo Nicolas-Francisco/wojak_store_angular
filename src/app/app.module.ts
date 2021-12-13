@@ -14,6 +14,7 @@ import { BannerComponent } from './components/banner/banner.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { DetailComponent } from './components/detail/detail.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { DetailComponent } from './components/detail/detail.component';
     BannerComponent,
     ContactComponent,
     PageNotFoundComponent,
-    DetailComponent
+    DetailComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
