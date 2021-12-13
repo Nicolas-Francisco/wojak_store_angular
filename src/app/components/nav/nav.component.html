@@ -16,9 +16,8 @@
   <div class="side-menu" [class.active]="show_menu">
     <button (click)="toggleMenu()"> Close </button>
     <ul>
-      <li> <a href=""> All </a> </li>
-      <li> <a href=""> Some Wojaks </a> </li>
-      <li> <a href=""> More Wojaks </a> </li>
+      <li> <a routerLink="/products"> Productos </a> </li>
+      <li> <a routerLink="/contact"> Contacto </a> </li>
     </ul>
   </div>
 </div>
@@ -27,21 +26,23 @@
   <div>
     <nav>
       <a href="">
-        <img src="./assets/svg/logo_yard_sale.svg" alt="shop-logo">
+        <img src="./assets/svg/logo_yard_sale.svg" alt="shop-logo" routerLink="/home">
       </a>
 
       <ul>
-        <li> <a href=""> All </a> </li>
-        <li> <a href=""> Some Wojaks </a> </li>
-        <li> <a href=""> More Wojaks </a> </li>
+        <li> <a routerLink="/products"> Productos </a> </li>
+        <li> <a routerLink="/contact"> Contacto </a> </li>
       </ul>
     </nav>
 
     <div class="info">
       <div class="account"> blackfire@gmail.com </div>
-      <a href="">
-        <img src="./assets/svg/icon_shopping_cart.svg" alt="shop-logo">
-      </a>
+      <div class="cart">
+        <a href="">
+          <img src="./assets/svg/icon_shopping_cart.svg" alt="shop-logo">
+        </a>
+        <span class="counter"> {{counter}} </span>
+      </div>
     </div>
 
   </div>

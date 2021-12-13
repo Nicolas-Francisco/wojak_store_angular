@@ -7,7 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChange
 })
 export class ImgComponent implements OnInit, OnChanges, AfterViewInit, OnDestroy {
   // Variables del componente
-  public name:string = 'BlackFire'
+  // public name:string = 'BlackFire'
 
   // Inputs
   @Input() img:string = '';

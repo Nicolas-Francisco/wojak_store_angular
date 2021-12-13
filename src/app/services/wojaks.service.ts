@@ -7,25 +7,25 @@ import { Wojak } from '../models/product.model';
 export class WojaksService {
   private wojaks:Wojak[] = [
     {
-      id: '01',
+      id: '1',
       name: 'twinkjak',
       img: './assets/imgs/twinkjak.jpg',
       price: 99.99
     },
     {
-      id: '02',
+      id: '2',
       name: 'cryjak',
       img: './assets/imgs/cryjak.jpg',
       price: 199.99
     },
     {
-      id: '03',
+      id: '3',
       name: 'ladyjak',
       img: './assets/imgs/ladyjak.jpg',
       price: 299.99
     },
     {
-      id: '01',
+      id: '4',
       name: 'darkjak',
       img: './assets/imgs/darkjak.jpg',
       price: 159.99
@@ -34,6 +34,10 @@ export class WojaksService {
 
   public getWojaks(){
     return this.wojaks;
+  }
+
+  public getWojak(id: string){
+    return this.wojaks.find(item => id === item.id);
   }
 
   constructor() { }
