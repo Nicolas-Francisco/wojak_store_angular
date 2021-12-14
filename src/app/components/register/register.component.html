@@ -1,0 +1,13 @@
+<div>
+  <div>
+    <p> Email </p>
+    <input [formControl]="emailField" type="text">
+  </div>
+
+  <div>
+    <p> Password </p>
+    <input [formControl]="passwordField" type="password">
+  </div>
+
+  <button [disabled]="emailField.invalid" [disabled]="passwordField.invalid" (click)="onRegister()"> Registrarse </button>
+</div>

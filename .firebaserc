@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "wojak-store": {
+      "hosting": {
+        "mini-store": [
+          "wojak-store"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "wojak-store"
+  }
+}

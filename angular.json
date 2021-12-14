@@ -104,6 +104,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "mini-store:build:production",
+            "firebaseProject": "wojak-store",
+            "firebaseHostingSite": "wojak-store"
+          }
         }
       }
     }
